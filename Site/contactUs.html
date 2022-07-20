@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact US</title>
+    <link rel="stylesheet" href="custom.css" />
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- header -->
+    <div id="nav">
+        <img src="images/logo.jpg" id="logo" alt="logo" />
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Online Courses</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- main -->
+    <div class="text-white bg-dark fs-2 text-center p-2">Contact Us</div>
+    <div id="contact-us-main" class="p-5">
+        <div id="contact-us-div">
+            <p class="fs-3">Get in Touch</p>
+            <p>Enter your details in the form</p>
+            <form id="contact-form" class="p-3">
+                <div class="mb-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="Enter first name here">
+                </div>
+                <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="Enter last name here">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email here">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Enter phone here">
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <select class="form-select" id="country">
+                        <option>Pakistan</option>
+                        <option>India</option>
+                        <option>Bangladesh</option>
+                        <option>Afghanistan</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label style="display: block;" class="form-label">Type</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="Inquiry" name="type1" class="form-check-input">
+                        <label for="Inquiry" class="form-check-label"> Inquiry </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="feedback" name="type1" class="form-check-input">
+                        <label for="feedback" class="form-check-label"> Feedback </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date"><i class='fa fa-calendar'></i></input>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="time">
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="service1">
+                    <label class="form-check-label" for="service1">Service 1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="service2">
+                    <label class="form-check-label" for="service2">Service 2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="service3" disabled>
+                    <label class="form-check-label" for="service3">Service 3</label>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label mt-3">Message</label>
+                    <textarea id="message" class="form-control" rows="5" placeholder="Enter message here"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+    <!-- footer -->
+    <div id="footer">
+        <img src="images/logo.jpg" alt="logo" style="height: 100px; width: 100px;">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Online Courses</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+        <p>Copyright &copy; My Web</p>
+    </div>
+
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

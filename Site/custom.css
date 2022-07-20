@@ -22,7 +22,7 @@ ul li{
     display: inline;
 }
 #main{
-    background-image: url("main.jpg");
+    background-image: url("images/main.jpg");
     background-size: cover;
 }
 #main-content{
@@ -36,15 +36,29 @@ ul li{
     padding: 10px;
     border: none;
 }
-#bottom{
+#bottom,#footer{
     text-align: center;
-    padding: 50px 100px 50px 100px;
+    padding: 20px 100px 20px 100px;
 }
-#bottom ul li a{
+#footer ul li a{
     color: black;
     text-decoration: none;
 }
 #who{
     font-size: 50px;
     font-weight: bold;
+}
+
+/* contact us page */
+#contact-us-main{
+    background-color: aliceblue;
+}
+#contact-us-div{
+    width: 40%;
+    margin: auto;
+}
+#contact-form{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
 }
