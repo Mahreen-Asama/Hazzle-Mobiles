@@ -1,0 +1,50 @@
+#nav ul li a{
+    text-decoration: none;
+    color:white;
+}
+#nav{
+    background-color: black;
+    border: 2px solid black;
+    overflow: auto;
+}
+#logo{
+    height: 60px;
+    width: 60px;
+    float: left;
+}
+#nav ul{
+    color: white;
+    float: right;
+}
+ul li{
+    padding: 20px;
+    list-style-type: none;
+    display: inline;
+}
+#main{
+    background-image: url("main.jpg");
+    background-size: cover;
+}
+#main-content{
+    padding: 200px;
+    text-align: center;
+    color: white;
+}
+#details-btn{
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+}
+#bottom{
+    text-align: center;
+    padding: 50px 100px 50px 100px;
+}
+#bottom ul li a{
+    color: black;
+    text-decoration: none;
+}
+#who{
+    font-size: 50px;
+    font-weight: bold;
+}
