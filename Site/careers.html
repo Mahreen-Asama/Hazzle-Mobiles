@@ -6,21 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" />
+    <script src="custom.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <header>Header</header>
-    <hr>
+    <!-- header -->
+    <div id="nav">
+        <img src="images/logo.jpg" id="logo" alt="logo" />
+        <ul>
+            <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Online Courses</a></li>
+                <li><a href="careers.html">Career</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- main -->
+    <div class="text-white bg-dark fs-2 text-center p-2">Careers</div>
 
     <section id="careers-main">
-        <h1>Welcome to Dot Net Training Website</h1>
+        <h1 class="text-danger"><u>Graphic Designer</u></h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto placeat veniam ipsum officia quos dignissimos, fugiat obcaecati nobis ullam itaque sapiente eum omnis saepe voluptates voluptatibus, illum animi perferendis? Aliquam!</p>
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Submit
+            SIGN UP
         </button>
     </section>
 
@@ -37,13 +49,13 @@
                     <div class="row">
                         <div class="col-12 mb-3">
                             <div class="form-group">
-                                <label for="picture" class="form-label">Upload Picture</label>
+                                <label for="picture" class="form-label">Upload Picture <span class="text-danger">*</span></label>
                                 <input type="file" class="form-control" id="picture" required>
                             </div>
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
-                                <label for="fname" class="form-label">First Name</label>
+                                <label for="fname" class="form-label">First Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="fname" placeholder="First name here"
                                     required>
                             </div>
@@ -56,33 +68,33 @@
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
-                                <label for="email" class="form-label">Email</label>
+                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                                 <input type="email" class="form-control" id="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
-                                <label for="c-email" class="form-label">Confirm Email</label>
+                                <label for="c-email" class="form-label">Confirm Email <span class="text-danger">*</span></label>
                                 <input type="email" class="form-control" id="c-email" placeholder=" Confirm Email"
                                     required>
                             </div>
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
-                                <label for="pass" class="form-label">Password</label>
+                                <label for="pass" class="form-label">Password <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="pass" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
-                                <label for="c-pass" class="form-label">Confirm Password</label>
+                                <label for="c-pass" class="form-label">Confirm Password <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="c-pass" placeholder="Confirm Password"
                                     required>
                             </div>
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
-                                <label for="country" class="form-label">Country</label>
+                                <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
                                 <select class="form-select" aria-label="Default select example" required>
                                     <option selected>Pakistan</option>
                                     <option value="1">India</option>
@@ -91,21 +103,26 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-2 mb-3">
+                        <div class="col-3 mb-3">
                             <div class="form-group">
-                                <label for="code" class="form-label">Code</label>
-                                <input type="text" class="form-control" id="code" placeholder="Code" disabled>
+                                <label for="code" class="form-label">Code <span class="text-danger">*</span></label>
+                                <select class="form-select" aria-label="Default select example" disabled>
+                                    <option selected>+92</option>
+                                    <option value="1">+91</option>
+                                    <option value="2">+93</option>
+                                    <option value="3">+880</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-4 mb-3">
+                        <div class="col-3 mb-3">
                             <div class="form-group">
-                                <label for="phone" class="form-label">Phone</label>
+                                <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="phone" required>
                             </div>
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
-                                <label style="display: block;" class="form-label">Gender</label>
+                                <label style="display: block;" class="form-label">Gender <span class="text-danger">*</span></label>
                                 <div class="form-check-inline">
                                     <input type="radio" id="Inquiry" name="type1" class="form-check-input">
                                     <label for="Inquiry" class="form-check-label"> Male </label>
@@ -118,13 +135,13 @@
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
-                                <label for="date" class="form-label">Date</label>
+                                <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
                                 <input type="date" class="form-control" id="date" required>
                             </div>
                         </div>
                         <div class="col-12 mb-3">
                             <div class="form-group">
-                                <label style="display: block;" class="form-label">Subjects</label>
+                                <label style="display: block;" class="form-label">Subjects <span class="text-danger">*</span></label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="service1">
                                     <label class="form-check-label" for="service1">Science</label>
@@ -145,11 +162,11 @@
                         </div>
                         <div class="col-12 mb-3">
                             <div class="form-group">
-                                <label for="message" class="form-label mt-3">Message</label>
+                                <label for="message" class="form-label mt-3">Message <span class="text-danger">*</span></label>
                                 <textarea id="message" class="form-control" rows="5" placeholder="Enter message here"></textarea>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -161,8 +178,19 @@
     </div>
 
     <!-- footer -->
-    <hr>
-    <footer>footer</footer>
+    <div id="footer">
+        <img src="images/logo.jpg" alt="logo" style="height: 100px; width: 100px;">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Online Courses</a></li>
+            <li><a href="careers.html">Career</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+        <p>Copyright &copy; My Web</p>
+    </div>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
