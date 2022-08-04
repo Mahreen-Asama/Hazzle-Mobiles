@@ -13,9 +13,27 @@ $(document).ready(function(){
 
 
 function SubmitForm() {
-    alert('hkl')
+    //alert('hkl')
     //show form data on page, when form is submitted.
 
+    //display profile picture
+    var file = document.getElementById('picture').files[0];
+    var reader  = new FileReader();
+    // it's onload event
+    reader.onload = function(e)  {
+        var src = document.createAttribute("src");
+        // the result image data
+        src.value = e.target.result;
+        //set attribute
+        var image=document.getElementById('dp');
+        image.setAttributeNode(src);
+     }
+     // you have to declare the file loading
+     reader.readAsDataURL(file);
+
+
+
+    //rest data
     document.getElementById('career-table').style.display="block";
 
     var fname=document.getElementById('fname').value;
