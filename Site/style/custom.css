@@ -4,12 +4,11 @@
 }
 #nav{
     background-color: black;
-    border: 2px solid black;
     overflow: auto;
 }
 #logo{
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 100px;
     float: left;
 }
 #nav ul{

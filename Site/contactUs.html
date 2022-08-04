@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact US</title>
-    <link rel="stylesheet" href="custom.css" />
+    <title>Contact Us</title>
     <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="custom.js"></script>
+    <link rel="stylesheet" href="style/custom.css" />
+    <script src="style/custom.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
     <!-- header -->
     <div id="nav">
-        <img src="images/logo.jpg" id="logo" alt="logo" />
+        <img src="style/images/logo.png" id="logo" alt="logo" />
         <ul>
             <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
                 <li><a href="#">Online Courses</a></li>
                 <li><a href="careers.html">Career</a></li>
                 <li><a href="contactUs.html">Contact Us</a></li>
@@ -28,6 +27,7 @@
 
     <!-- main -->
     <div class="text-white bg-dark fs-2 text-center p-2">Contact Us</div>
+    <section id="contact-main">
     <div id="contact-us-main" class="p-5">
         <div id="contact-us-div">
             <p class="fs-3">Get in Touch</p>
@@ -73,14 +73,14 @@
                     <label for="date" class="form-label">Date</label>
                     <div class="input-group">
                         <input type="date" class="form-control" id="date">
-                        <span class="input-group-text"><i class='fa fa-calendar'></i></span>
+                        <!-- <span class="input-group-text"><i class='fa fa-calendar'></i></span> -->
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="time" class="form-label">Time</label>
                     <div class="input-group">
                         <input type="time" class="form-control" id="time">
-                        <span class="input-group-text"><i class='fa fa-clock-o'></i></span>
+                        <!-- <span class="input-group-text"><i class='fa fa-clock-o'></i></span> -->
                     </div>
                 </div>
                 <div class="form-check form-check-inline">
@@ -104,20 +104,24 @@
             </form>
         </div>
     </div>
+    </section>
+
+    
+
     <!-- footer -->
     <div id="footer">
-        <img src="images/logo.jpg" alt="logo" style="height: 100px; width: 100px;">
+        <img src="style/images/footer-logo.png" alt="logo" style="height: 80px; width: 100px;">
         <ul>
             <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Online Courses</a></li>
-                <li><a href="careers.html">Career</a></li>
-                <li><a href="contactUs.html">Contact Us</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="#">Online Courses</a></li>
+            <li><a href="careers.html">Career</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
         </ul>
         <p>Copyright &copy; My Web</p>
     </div>
-
     <script src="Bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
