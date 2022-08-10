@@ -8,8 +8,8 @@
     <title>Careers</title>
     <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style/custom.css" />
-    <script src="style/custom.js"></script>
-    <script src="jquery-3.6.0.js"></script>
+    <script src="style/custom.js" type="text"></script>
+
 </head>
 
 <body>
@@ -83,6 +83,8 @@
                 </tr>
             </tbody>
         </table>
+
+        <button type="button" onclick="writeFileFun()">Show Profile Picture</button>
     </section>
 
     <!-- Modal -->
@@ -116,6 +118,8 @@
                                 <input type="text" class="form-control" id="lname" placeholder="Last name here">
                             </div>
                         </div>
+                        <div class="col-12 mb-3 text-danger" id="name-error-msg"></div>
+
                         <div class="col-6 mb-3">
                             <div class="form-group">
                                 <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
@@ -129,6 +133,8 @@
                                     required>
                             </div>
                         </div>
+                        <div class="col-12 mb-3 text-danger" id="email-error-msg"></div>
+
                         <div class="col-6 mb-3">
                             <div class="form-group">
                                 <label for="pass" class="form-label">Password <span class="text-danger">*</span></label>
@@ -240,7 +246,8 @@
         <p>Copyright &copy; My Web</p>
     </div>
     <script src="Bootstrap/js/bootstrap.min.js"></script>
-    <script src="style/custom.js" type="text"></script>
+    <script src="Jquery/jquery-3.6.0.min.js"></script>
+
 </body>
 
 </html>

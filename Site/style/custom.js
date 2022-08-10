@@ -10,20 +10,42 @@ $(document).ready(function(){
     })
 })
 
-
+var formValid=true;
 
 function SubmitForm() {
-    //alert('hkl')
+    //first check validation of all things
+    alert('SubmitForm')
+
+
+    let email=document.getElementById('email');
+    let confirmEmail=document.getElementById('c-email');
+    if(email!=confirmEmail){
+        alert('email not match')
+        formValid=false;
+        document.getElementById('email-error-msg').innerHTML="Email and ConfirmEmail must match";
+    }
+
+    if(formValid){
+        DisplayData();
+    }
+}
+
+function DisplayData() {
     //show form data on page, when form is submitted.
 
     //display profile picture
     var file = document.getElementById('picture').files[0];
+    console.log(file);
     var reader  = new FileReader();
     // it's onload event
     reader.onload = function(e)  {
         var src = document.createAttribute("src");
         // the result image data
         src.value = e.target.result;
+        console.log(e);
+        console.log(e.target);
+        console.log(e.target.result);
+
         //set attribute
         var image=document.getElementById('dp');
         image.setAttributeNode(src);
@@ -32,8 +54,7 @@ function SubmitForm() {
      reader.readAsDataURL(file);
 
 
-
-    //rest data
+    //-------------------------rest data
     document.getElementById('career-table').style.display="block";
 
     var fname=document.getElementById('fname').value;
@@ -81,3 +102,28 @@ function SubmitForm() {
 
     
 }
+
+
+//-----------save profile picture in local directory
+//Firstly, I grab my image with getElementByID, and save the image as a Base64. 
+//Then I save the Base64 string as my localStorage value.
+
+let dp = document.getElementById('dp');
+imgData = getBase64Image(dp);
+localStorage.setItem("dp", imgData);
+
+function getBase64Image(img) {
+    //the function that converts the image to a Base64 string:
+
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
