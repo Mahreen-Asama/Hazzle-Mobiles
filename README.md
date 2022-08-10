@@ -1,2 +1,2 @@
 # Hazzle-Mobiles
-A website from Hazzle Mobiles.
+A Project by Hazzle Mobiles.
