@@ -8,7 +8,7 @@
     <title>Careers</title>
     <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style/custom.css" />
-    <script src="style/custom.js" type="text"></script>
+    <!-- <script src="style/custom.js" type="text"></script> -->
 
 </head>
 
@@ -31,6 +31,7 @@
     <section id="careers-main">
         <h1 class="text-danger"><u>Graphic Designer</u></h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto placeat veniam ipsum officia quos dignissimos, fugiat obcaecati nobis ullam itaque sapiente eum omnis saepe voluptates voluptatibus, illum animi perferendis? Aliquam!</p>
+        <button onclick="heko()">click me</button>
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             SIGN UP
         </button>
@@ -88,7 +89,7 @@
     </section>
 
     <!-- Modal -->
-    
+    <form onsubmit="SubmitForm()">
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
@@ -105,20 +106,21 @@
                                 <input type="file" class="form-control" id="picture" required accept="image/png, image/jpg, image/jpeg">
                             </div>
                         </div>
-                        <div class="col-6 mb-3">
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="fname" class="form-label">First Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="fname" placeholder="First name here"
-                                    required>
+                                    required maxlength="100" onkeypress="return OnlyAlphabets(event)" class="name">
                             </div>
                         </div>
-                        <div class="col-6 mb-3">
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="lname" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lname" placeholder="Last name here">
+                                <input type="text" class="form-control" id="lname" placeholder="Last name here" 
+                                 maxlength="100" onkeypress="return OnlyAlphabets(event)" class="name">
                             </div>
                         </div>
-                        <div class="col-12 mb-3 text-danger" id="name-error-msg"></div>
+                        <div class="col-12 mb-3" id="name-error-msg"></div>
 
                         <div class="col-6 mb-3">
                             <div class="form-group">
@@ -133,19 +135,19 @@
                                     required>
                             </div>
                         </div>
-                        <div class="col-12 mb-3 text-danger" id="email-error-msg"></div>
+                        <div class="col-12 mb-3 text-danger" id="email-error-msg" style="display: none;"></div>
 
                         <div class="col-6 mb-3">
                             <div class="form-group">
                                 <label for="pass" class="form-label">Password <span class="text-danger">*</span></label>
-                                <input type="password" class="form-control" id="pass" placeholder="Password" required>
+                                <input type="password" class="form-control" id="pass" placeholder="Password" required maxlength="10">
                             </div>
                         </div>
                         <div class="col-6 mb-3">
                             <div class="form-group">
                                 <label for="c-pass" class="form-label">Confirm Password <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="c-pass" placeholder="Confirm Password"
-                                    required>
+                                    required maxlength="10">
                             </div>
                         </div>
                         <div class="col-6 mb-3">
@@ -227,12 +229,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="SubmitForm()">Save</button>
+                    <input type="submit" class="btn btn-primary" value="Save">
                 </div>
             </div>
         </div>
     </div>
-    
+    </form>
     <!-- footer -->
     <div id="footer">
         <img src="style/images/footer-logo.png" alt="logo" style="height: 80px; width: 100px;">
@@ -247,6 +249,190 @@
     </div>
     <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="Jquery/jquery-3.6.0.min.js"></script>
+    <script src="style/custom.js" type="text"></script>
+
+    <script>
+        //-------------Careers page js----------------------- 
+
+//first,last name
+
+document.getElementById("fname").addEventListener("blur", function(){
+    document.getElementById('name-error-msg').style.color="blue";
+    document.getElementById('name-error-msg').innerHTML="Seem Good";
+});
+document.getElementById("lname").addEventListener("blur", function(){
+    document.getElementById('name-error-msg').style.color="blue";
+    document.getElementById('name-error-msg').innerHTML="Seem Good";
+});
+
+function myFunction() {
+  alert("Input field lost focus.");
+}
+// accessing the elements with same classname
+// const elements = document.querySelectorAll('.name');
+
+// // adding the event listener by looping
+// elements.forEach(element => {
+//    element.addEventListener("blur", (e)=>{
+//      console.log('someone hit me');
+//    });
+// });
+// var names=document.getElementsByClassName('name');
+// alert(names[0])
+// for(let i=0; i<names.length; i++){
+//     alert(names[i])
+//     names[i].addEventListener('blur',function(){
+//         document.getElementById('name-error-msg').style.color="blue";
+//         document.getElementById('name-error-msg').innerHTML="Seem Correct";
+//     })
+// }
+
+
+//checking fname,lname
+function OnlyAlphabets(e) {
+    var keyCode = (e.which) ? e.which : e.keyCode;
+    if((keyCode>=65 && keyCode<=90) || (keyCode>=97 && keyCode<=122)){
+        return true;
+    }
+    else{
+        document.getElementById('name-error-msg').style.color="red";
+        document.getElementById('name-error-msg').innerHTML="Name should only contain alphabets";
+        return false;
+    }
+}
+function OnlyNumbers(e) {
+    var keyCode = (e.which) ? e.which : e.keyCode;
+    if(keyCode>=48 && keyCode<=57){
+        return true;
+    }
+    else{
+        document.getElementById('name-error-msg').style.color="red";
+        document.getElementById('name-error-msg').innerHTML="PhoneNumber should only contain numbers";
+        return false;
+    }
+}
+var formValid=true;
+
+function SubmitForm() {
+    //first check validation of all things
+    alert('SubmitForm')
+
+
+    //fname,lname
+
+    let email=document.getElementById('email');
+    let confirmEmail=document.getElementById('c-email');
+    if(email!=confirmEmail){
+        alert('email not match')
+        formValid=false;
+        document.getElementById('email-error-msg').innerHTML="Email and ConfirmEmail must match";
+    }
+
+    if(formValid){
+        DisplayData();
+    }
+}
+
+
+function DisplayData() {
+    //show form data on page, when form is submitted.
+
+    //display profile picture
+    var file = document.getElementById('picture').files[0];
+    console.log(file);
+    var reader  = new FileReader();
+    // it's onload event
+    reader.onload = function(e)  {
+        var src = document.createAttribute("src");
+        // the result image data
+        src.value = e.target.result;
+        console.log(e);
+        console.log(e.target);
+        console.log(e.target.result);
+
+        //set attribute
+        var image=document.getElementById('dp');
+        image.setAttributeNode(src);
+     }
+     // you have to declare the file loading
+     reader.readAsDataURL(file);
+
+
+    //-------------------------rest data
+    document.getElementById('career-table').style.display="block";
+
+    var fname=document.getElementById('fname').value;
+    document.getElementById('th-fname').innerHTML=fname;
+
+    var lname=document.getElementById('lname').value;
+    document.getElementById('th-lname').innerHTML=lname;
+
+    var email=document.getElementById('email').value;
+    document.getElementById('td-email').innerHTML=email;
+
+    var pass=document.getElementById('pass').value;
+    document.getElementById('td-pass').innerHTML=pass;
+
+    var country=document.getElementById('country').value;
+    document.getElementById('td-country').innerHTML=country;
+
+    var code=document.getElementById('code').value;
+    var phone=document.getElementById('phone').value;
+    document.getElementById('td-phone').innerHTML=code +" "+phone;
+
+    //get radio btn elements by name
+    var gender=document.getElementsByName('gender');
+    for(let g of gender){
+        if(g.checked){
+            document.getElementById('td-gender').innerHTML = g.value;
+        }
+    }
+
+    var dob=document.getElementById('date').value;
+    document.getElementById('td-dob').innerHTML=dob;
+
+    //subjects list
+    var subjects=document.getElementsByName('subject');
+    let str='';
+    for(let s of subjects){
+        if(s.checked){
+            str += s.id + ", ";
+        }
+    }
+    document.getElementById('td-subjects').innerHTML=str;
+
+    var message=document.getElementById('message').value;
+    document.getElementById('td-message').innerHTML=message;
+
+    
+}
+
+
+//-----------save profile picture in local directory
+//Firstly, I grab my image with getElementByID, and save the image as a Base64. 
+//Then I save the Base64 string as my localStorage value.
+
+let dp = document.getElementById('dp');
+imgData = getBase64Image(dp);
+localStorage.setItem("dp", imgData);
+
+function getBase64Image(img) {
+    //the function that converts the image to a Base64 string:
+
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+
+    </script>
 
 </body>
 
