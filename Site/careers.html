@@ -31,7 +31,7 @@
     <section id="careers-main">
         <h1 class="text-danger"><u>Graphic Designer</u></h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto placeat veniam ipsum officia quos dignissimos, fugiat obcaecati nobis ullam itaque sapiente eum omnis saepe voluptates voluptatibus, illum animi perferendis? Aliquam!</p>
-        <button onclick="heko()">click me</button>
+        <!-- <button onclick="heko()">click me</button> -->
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             SIGN UP
         </button>
@@ -85,7 +85,7 @@
             </tbody>
         </table>
 
-        <button type="button" onclick="writeFileFun()">Show Profile Picture</button>
+        <!-- <button type="button" onclick="writeFileFun()">Show Profile Picture</button> -->
     </section>
 
     <!-- Modal -->
@@ -110,74 +110,79 @@
                             <div class="form-group">
                                 <label for="fname" class="form-label">First Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="fname" placeholder="First name here"
-                                    required maxlength="100" onkeypress="return OnlyAlphabets(event)" class="name">
+                                    required maxlength="100" onkeypress="return OnlyAlphabets(event)">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="lname" class="form-label">Last Name</label>
                                 <input type="text" class="form-control" id="lname" placeholder="Last name here" 
-                                 maxlength="100" onkeypress="return OnlyAlphabets(event)" class="name">
+                                 maxlength="100" onkeypress="return OnlyAlphabets(event)">
                             </div>
                         </div>
-                        <div class="col-12 mb-3" id="name-error-msg"></div>
+                        <div class="col-12 mb-3 text-danger" id="name-error-msg"></div>
 
-                        <div class="col-6 mb-3">
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                                 <input type="email" class="form-control" id="email" placeholder="Email" required>
                             </div>
                         </div>
-                        <div class="col-6 mb-3">
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="c-email" class="form-label">Confirm Email <span class="text-danger">*</span></label>
                                 <input type="email" class="form-control" id="c-email" placeholder=" Confirm Email"
                                     required>
                             </div>
                         </div>
-                        <div class="col-12 mb-3 text-danger" id="email-error-msg" style="display: none;"></div>
+                        <div class="col-12 mb-3 text-danger" id="email-error-msg"></div>
 
-                        <div class="col-6 mb-3">
+
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="pass" class="form-label">Password <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="pass" placeholder="Password" required maxlength="10">
                             </div>
                         </div>
-                        <div class="col-6 mb-3">
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="c-pass" class="form-label">Confirm Password <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="c-pass" placeholder="Confirm Password"
                                     required maxlength="10">
                             </div>
                         </div>
-                        <div class="col-6 mb-3">
+                        <div class="col-12 mb-3 text-danger" id="pass-error-msg"></div>
+
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
                                 <select class="form-select" aria-label="Default select example" required id="country">
-                                    <option selected value="+92">Pakistan</option>
-                                    <option value="+91">India</option>
-                                    <option value="+93">Afghanistan</option>
-                                    <option value="+880">Bangladesh</option>
+                                    <option selected value="0" name="Pakistan">Pakistan</option>
+                                    <option value="1" name="India">India</option>
+                                    <option value="2" name="Afghanistan">Afghanistan</option>
+                                    <option value="3" name="Bangladesh">Bangladesh</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-3 mb-3">
+                        <div class="col-3">
                             <div class="form-group">
                                 <label for="code" class="form-label">Code <span class="text-danger">*</span></label>
                                 <select class="form-select" aria-label="Default select example" disabled id="code">
-                                    <option selected>+92</option>
+                                    <option value="0" selected>+92</option>
                                     <option value="1">+91</option>
                                     <option value="2">+93</option>
                                     <option value="3">+880</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-3 mb-3">
+                        <div class="col-3">
                             <div class="form-group">
                                 <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="phone" required>
+                                <input type="text" class="form-control" id="phone" required onkeypress="return OnlyNumbers(event)">
                             </div>
                         </div>
+                        <div class="col-12 mb-3 text-danger" id="phone-error-msg"></div>
+
                         <div class="col-6 mb-3">
                             <div class="form-group">
                                 <label style="display: block;" class="form-label">Gender <span class="text-danger">*</span></label>
@@ -191,13 +196,15 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-6 mb-3">
                             <div class="form-group">
                                 <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
                                 <input type="date" class="form-control" id="date" required>
                             </div>
                         </div>
-                        <div class="col-12 mb-3">
+
+                        <div class="col-12">
                             <div class="form-group">
                                 <label style="display: block;" class="form-label">Subjects <span class="text-danger">*</span></label>
                                 <div class="form-check form-check-inline">
@@ -218,10 +225,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 mb-3 text-danger" id="subject-error-msg"></div>
+
                         <div class="col-12 mb-3">
                             <div class="form-group">
                                 <label for="message" class="form-label mt-3">Message <span class="text-danger">*</span></label>
-                                <textarea id="message" class="form-control" rows="5" placeholder="Enter message here"></textarea>
+                                <textarea id="message" class="form-control" rows="5" placeholder="Enter message here" maxlength="500" required></textarea>
                             </div>
                         </div>
 
@@ -254,88 +263,120 @@
     <script>
         //-------------Careers page js----------------------- 
 
-//first,last name
-
+//-----------------------------------------checking fname,lname--------------------------------
 document.getElementById("fname").addEventListener("blur", function(){
-    document.getElementById('name-error-msg').style.color="blue";
-    document.getElementById('name-error-msg').innerHTML="Seem Good";
+    document.getElementById('name-error-msg').innerHTML="";
 });
 document.getElementById("lname").addEventListener("blur", function(){
-    document.getElementById('name-error-msg').style.color="blue";
-    document.getElementById('name-error-msg').innerHTML="Seem Good";
+    document.getElementById('name-error-msg').innerHTML="";
+});
+document.getElementById("phone").addEventListener("blur", function(){
+    document.getElementById('phone-error-msg').innerHTML="";
 });
 
-function myFunction() {
-  alert("Input field lost focus.");
-}
-// accessing the elements with same classname
-// const elements = document.querySelectorAll('.name');
 
-// // adding the event listener by looping
-// elements.forEach(element => {
-//    element.addEventListener("blur", (e)=>{
-//      console.log('someone hit me');
-//    });
-// });
-// var names=document.getElementsByClassName('name');
-// alert(names[0])
-// for(let i=0; i<names.length; i++){
-//     alert(names[i])
-//     names[i].addEventListener('blur',function(){
-//         document.getElementById('name-error-msg').style.color="blue";
-//         document.getElementById('name-error-msg').innerHTML="Seem Correct";
-//     })
+//--------------------on change event of country------------------
+document.getElementById('country').addEventListener('change',function(){
+    //first clear prev. code
+    let codes=document.getElementById('code').options;
+    for(var i = 0; i < codes.length; i++){
+      codes[i].selected = false;
+    }
+    let cntry=this.value;
+    document.getElementById('code').options[cntry].selected=true;   //set new code
+})
+
+
+// let namesarr=document.getElementsByClassName('flname');
+// for(let i=0; i<namesarr.length; i++){
+//     namesarr[i].onblur=function(){
+//         alert('blur')
+//     document.getElementById('name-error-msg').innerHTML="Seem Good";
+//     }
 // }
 
 
-//checking fname,lname
+//-----------------------------------------checking fname,lname
 function OnlyAlphabets(e) {
     var keyCode = (e.which) ? e.which : e.keyCode;
     if((keyCode>=65 && keyCode<=90) || (keyCode>=97 && keyCode<=122)){
         return true;
     }
     else{
-        document.getElementById('name-error-msg').style.color="red";
         document.getElementById('name-error-msg').innerHTML="Name should only contain alphabets";
         return false;
     }
 }
+//-----------------------------------------checking phone-number
 function OnlyNumbers(e) {
     var keyCode = (e.which) ? e.which : e.keyCode;
     if(keyCode>=48 && keyCode<=57){
         return true;
     }
     else{
-        document.getElementById('name-error-msg').style.color="red";
-        document.getElementById('name-error-msg').innerHTML="PhoneNumber should only contain numbers";
+        document.getElementById('phone-error-msg').style.color="red";
+        document.getElementById('phone-error-msg').innerHTML="PhoneNumber can only contain numbers";
         return false;
     }
 }
-var formValid=true;
 
+//-----------------------------------------submit form final-----------------------------
 function SubmitForm() {
     //first check validation of all things
-    alert('SubmitForm')
+    // alert('SubmitForm')
+    let formValid=true;
 
-
-    //fname,lname
-
-    let email=document.getElementById('email');
-    let confirmEmail=document.getElementById('c-email');
+    //--- email
+    let email=document.getElementById('email').value;
+    let confirmEmail=document.getElementById('c-email').value;
     if(email!=confirmEmail){
-        alert('email not match')
-        formValid=false;
         document.getElementById('email-error-msg').innerHTML="Email and ConfirmEmail must match";
+        formValid=false;
+    }
+    else{
+        document.getElementById('email-error-msg').innerHTML="";
+    }
+    //--- password
+    let pass=document.getElementById('pass').value;
+    let confirmPass=document.getElementById('c-pass').value;
+    if(pass!=confirmPass){
+        document.getElementById('pass-error-msg').innerHTML="Passsword and ConfirmPassword must match";
+        formValid=false;
+    }
+    else{
+        document.getElementById('pass-error-msg').innerHTML="";
+    }
+    //--- subjects
+    let subjects=document.getElementsByName('subject');
+    let c=0;
+    for(let i=0; i<subjects.length; i++){
+        if(subjects[i].checked){
+            c=1;
+            document.getElementById('subject-error-msg').innerHTML="";
+        }
+    }
+    if(c==0){ 
+        document.getElementById('subject-error-msg').innerHTML="Please select at least one subject";
+        formValid=false; 
     }
 
+    //---final display
     if(formValid){
         DisplayData();
+        // return true;
+    }
+    else{
+        // e.preventDefault();
+        return false;
     }
 }
 
 
 function DisplayData() {
     //show form data on page, when form is submitted.
+
+    alert('data');
+
 
     //display profile picture
     var file = document.getElementById('picture').files[0];
@@ -373,7 +414,7 @@ function DisplayData() {
     var pass=document.getElementById('pass').value;
     document.getElementById('td-pass').innerHTML=pass;
 
-    var country=document.getElementById('country').value;
+    var country=document.getElementById('country').name;
     document.getElementById('td-country').innerHTML=country;
 
     var code=document.getElementById('code').value;
@@ -402,33 +443,7 @@ function DisplayData() {
     document.getElementById('td-subjects').innerHTML=str;
 
     var message=document.getElementById('message').value;
-    document.getElementById('td-message').innerHTML=message;
-
-    
-}
-
-
-//-----------save profile picture in local directory
-//Firstly, I grab my image with getElementByID, and save the image as a Base64. 
-//Then I save the Base64 string as my localStorage value.
-
-let dp = document.getElementById('dp');
-imgData = getBase64Image(dp);
-localStorage.setItem("dp", imgData);
-
-function getBase64Image(img) {
-    //the function that converts the image to a Base64 string:
-
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-
-    var dataURL = canvas.toDataURL("image/png");
-
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+    document.getElementById('td-message').innerHTML=message;   
 }
 
 
