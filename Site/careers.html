@@ -363,15 +363,31 @@ function SubmitForm() {
         document.getElementById('email-error-msg').innerHTML="";
     }
     //--- password
+    //first check passowrd pattern
+    var reg1=/[0-9]/, reg2=/[A-Z]/;
+    var reg3=/[!@#$%^&*]/;         //at least one special character
+
     let pass=document.getElementById('pass').value;
-    let confirmPass=document.getElementById('c-pass').value;
-    if(pass!=confirmPass){
-        document.getElementById('pass-error-msg').innerHTML="Passsword and ConfirmPassword must match";
-        formValid=false;
+
+    if(reg1.test(pass) && reg2.test(pass) && reg3.test(pass)){
+        //if password passes all 3 tests
+        document.getElementById('pass-error-msg').innerHTML="";
+
+        let confirmPass=document.getElementById('c-pass').value;
+        if(pass!=confirmPass){
+            document.getElementById('pass-error-msg').innerHTML="Passsword and ConfirmPassword must match";
+            formValid=false;
+        }
+        else{
+            document.getElementById('pass-error-msg').innerHTML="";
+        }
     }
     else{
-        document.getElementById('pass-error-msg').innerHTML="";
+        document.getElementById('pass-error-msg').innerHTML="Password must contain at least 'one Capital letter, one digit, and one special character(!@#$%^&*)' "
+        formValid=false;
     }
+
+    
     //--- subjects
     let subjects=document.getElementsByName('subject');
     let c=0;
