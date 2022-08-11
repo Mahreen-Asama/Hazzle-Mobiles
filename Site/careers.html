@@ -281,8 +281,8 @@ function handleForm(event) {
         att.value='modal';
         document.getElementById('submit').setAttributeNode(att);
         DisplayData();
-        // document.getElementById('staticBackdrop').modal="hide";
-        $("#staticBackdrop").modal("hide");
+        this.reset();           //reset form after submitting once
+        $("#staticBackdrop").modal("hide");                 //hide the modal
     }
     else{
         event.preventDefault(); console.log('prevent')
